@@ -5,9 +5,16 @@ import { Keg } from './keg.model';
   selector: 'keg-display',
   inputs: ['keg'],
   template: `
-    <h3>{{ keg.name }}</h3>
+    <div>
+      <input *ngIf="keg.full" type="checkbox" checked (click)="toggleFull(false)"/>
+      <input *ngIf="!keg.full" type="checkbox" (click)="toggleFull(true)"/>
+      <label>{{ keg.name }}</label>
+    </div>
   `
 })
 export class KegComponent {
   public keg: Keg;
+  toggleFull(setState: boolean){
+    this.keg.full = setState;
+  }
 }

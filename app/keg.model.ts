@@ -1,5 +1,5 @@
 export class Keg {
-  public done: boolean = false;
+  public full: boolean = false;
   constructor(public name: string, public id: number) {
   }
 }
