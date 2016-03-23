@@ -12,7 +12,7 @@ import { FullPipe } from './full.pipe';
   pipes: [FullPipe],
   directives: [KegComponent, EditKegDetailsComponent, NewKegComponent],
   template: `
-  <select (change)="onChange($event.target.value)">
+  <select (change)="onChange($event.target.value)" class="filter">
     <option value="all">Show All</option>
     <option value="full">Show Full</option>
     <option value="notFull" selected="selected">Show Not Full</option>
