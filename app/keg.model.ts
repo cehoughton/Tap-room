@@ -1,5 +1,6 @@
 export class Keg {
-  public full: boolean = false;
-  constructor(public name: string, public howDrunk: string, public pints: number, public id: number) {
+  public low: boolean = false;
+  public pintsRemaining: number = 124;
+  constructor(public name: string, public howDrunk: string, public id: number) {
   }
 }

@@ -20,10 +20,10 @@ export class AppComponent {
   public kegs: Keg[];
   constructor(){
     this.kegs = [
-      new Keg("PBR", "Charming Drunk", 124, 0),
-      new Keg("Bud", "Charming Drunk", 124, 1),
-      new Keg("Ninkasi IPA", "Stumbling Drunk", 124, 2),
-      new Keg("Imperial Stout", "Crawling Drunk", 124, 3)
+      // new Keg("PBR", "Charming Drunk", 124, 0),
+      // new Keg("Bud", "Charming Drunk", 124, 1),
+      // new Keg("Ninkasi IPA", "Stumbling Drunk", 124, 2),
+      // new Keg("Imperial Stout", "Crawling Drunk", 124, 3)
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {

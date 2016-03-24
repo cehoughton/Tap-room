@@ -42,7 +42,7 @@ export class KegListComponent {
   }
   createKeg(newKegInfo): void {
     this.kegList.push(
-      new Keg(newKegInfo[0], newKegInfo[1], newKegInfo[2], this.kegList.length)
+      new Keg(newKegInfo[0], newKegInfo[1], this.kegList.length)
     );
   }
   onChange(filterOption) {
