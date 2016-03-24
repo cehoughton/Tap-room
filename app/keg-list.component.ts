@@ -40,9 +40,9 @@ export class KegListComponent {
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }
-  createKeg(name: string): void {
+  createKeg(newKegInfo): void {
     this.kegList.push(
-      new Keg(name, this.kegList.length)
+      new Keg(newKegInfo[0], newKegInfo[1], newKegInfo[2], this.kegList.length)
     );
   }
   onChange(filterOption) {

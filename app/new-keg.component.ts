@@ -8,7 +8,13 @@ import { Keg } from './keg.model';
     <div class="keg-form">
       <h3>Create Keg:</h3>
       <input placeholder="Name" class="col-sm-8 input-lg" #newName>
-      <button (click)="addKeg(newName)">Add</button>
+      <select class="dropdown" #userHowDrunk>
+        <option value="Charming Drunk" selected="selected">Charming Drunk</option>
+        <option value="Stumbling Drunk">Stumbling Drunk</option>
+        <option value="Crawling Drunk">Crawling Drunk</option>
+      </select>
+      <input placeholder="Pints" class="col-sm-8 input-lg" #newPints>
+      <button (click)="addKeg(newName, userHowDrunk, newPints)" class="btn-success btn-lg add-button">Add</button>
     </div>
   `
 })
@@ -17,9 +23,12 @@ export class NewKegComponent {
   constructor(){
     this.onSubmitNewKeg = new EventEmitter();
   }
-  addKeg(newBeerName: HTMLInputElement){
-    this.onSubmitNewKeg.emit(newBeerName.value);
-    console.log(newBeerName.value);
+  addKeg(newBeerName: HTMLInputElement, userHowDrunk: HTMLSelectElement, newPints: HTMLInputElement){
+    var values = [newBeerName.value, userHowDrunk.value, newPints.value];
+    this.onSubmitNewKeg.emit(values);
+    console.log(values);
+    userHowDrunk.value = "";
     newBeerName.value = "";
+    newPints.value = "";
   }
 }
