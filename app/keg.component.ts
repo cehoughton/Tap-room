@@ -5,28 +5,33 @@ import { Keg } from './keg.model';
   selector: 'keg-display',
   inputs: ['keg'],
   template: `
-    <div>
-      <input *ngIf="keg.full" type="checkbox" checked (click)="toggleFull(false)"/>
-      <input *ngIf="!keg.full" type="checkbox" (click)="toggleFull(true)"/>
+
+      <div class="keg-green">
+      <p>keg.component.ts</p>
       <label>Beer name: {{ keg.name }} | Alcohol content: {{ keg.howDrunk }} | Pints left: {{ keg.pintsRemaining }}</label>
       <button (click)="subtractPint()" class="btn-success btn-sm add-button" type="submit">Sell pint</button>
-    </div>
+      <button (click)="refillKeg()" class="btn-success btn-sm add-button" type="submit">Refill Keg!</button>
+      </div>
+
   `
 })
 export class KegComponent {
   public keg: Keg;
   subtractPint() {
     this.keg.pintsRemaining = this.keg.pintsRemaining -1;
+    this.checkRefill()
   }
 
 
 checkRefill() {
-  if(this.keg.pintsRemaining <= 10) {
-    this.keg.low = true;
+  if(this.keg.pintsRemaining >= 10) {
+    this.keg.low = false;
     console.log("low")
   } else {
-    this.keg.low = false;
+    this.keg.low = true;
   }
 }
-
+refillKeg() {
+  this.keg.pintsRemaining = 124
+}
 }

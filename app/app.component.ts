@@ -7,11 +7,14 @@ import { Keg } from './keg.model';
   directives: [KegListComponent],
   template: `
     <div class="container">
-      <h1>Keg List</h1>
-      <keg-list
-        [kegList]="kegs"
-        (onKegSelect)="kegWasSelected($event)">
-      </keg-list>
+      <div class="app-blue">
+      <p>app.component.ts</p>
+        <h1>Keg List</h1>
+        <keg-list
+          [kegList]="kegs"
+          (onKegSelect)="kegWasSelected($event)">
+        </keg-list>
+      </div>
     </div>
   `
 })
